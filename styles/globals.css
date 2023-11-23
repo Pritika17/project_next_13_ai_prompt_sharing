@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* 
-  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
-*/
 
 .main {
   width: 100vw;
@@ -14,55 +12,15 @@
   position: fixed;
   display: flex;
   justify-content: center;
-  padding: 120px 24px 160px 24px;
   pointer-events: none;
-}
-
-.main:before {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
-  position: absolute;
-  content: "";
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  top: 0;
-}
-
-.main:after {
-  content: "";
-  background-image: url("/assets/images/grid.svg");
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  opacity: 0.4;
-  filter: invert(1);
-}
-
-.gradient {
-  height: fit-content;
-  z-index: 3;
-  width: 100%;
-  max-width: 640px;
-  background-image: radial-gradient(
-      at 27% 37%,
-      hsla(215, 98%, 61%, 1) 0px,
-      transparent 0%
-    ),
-    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
-    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
-    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
-    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
-    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  filter: blur(100px) saturate(150%);
-  top: 80px;
-  opacity: 0.15;
+  background: rgb(255, 255, 255);
+  /* background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 30%,
+    rgb(241, 237, 201) 100%
+  ); */
+  background-color: #000000ed;
 }
 
 @media screen and (max-width: 640px) {
@@ -74,11 +32,87 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  @apply relative z-10 flex justify-center items-center flex-col mx-auto md:px-16 px-6;
 }
 
+/* .btn {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins";
+  letter-spacing: 1.5px;
+}
+.btn:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.btn:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+} */
+
 .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-md bg-[#181818] py-1.5 px-5 text-white transition-all hover:bg-[#131313] text-center text-lg font-inter flex items-center justify-center;
+  border: 1px solid #fff;
+}
+
+.blue_btn {
+  @apply rounded-md border border-[#0467fc] bg-[#0467fc] py-1.5 px-5 text-white transition-all hover:bg-[#0484fc] hover:text-[#fff] text-center text-lg font-inter flex items-center justify-center;
+}
+
+.yellow_btn {
+  @apply rounded-md border border-[#efd81d] bg-[#efd81d] py-1.5 px-5 text-black transition-all hover:bg-[#f9e01c]  text-center text-lg font-inter flex items-center justify-center;
+}
+
+.blue_big_btn {
+  @apply rounded-md border border-[#0467fc] bg-[#0467fc] py-3 px-8 text-white transition-all hover:bg-[#0484fc] hover:text-[#fff] text-center text-2xl font-inter flex items-center justify-center;
+}
+
+.yellow_big_btn {
+  @apply rounded-md border border-[#efd81d] bg-[#efd81d] py-3 px-8 text-black transition-all hover:bg-[#f9e01c] text-center text-2xl font-inter flex items-center justify-center;
+}
+
+
+
+.nav_items {
+  @apply text-lg font-normal text-gray-400 hover:text-white;
 }
 
 .outline_btn {
@@ -86,11 +120,19 @@
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-white sm:text-6xl;
+}
+
+.head_gradient {
+  background-image: linear-gradient(to right, #4dcbe1, #e909f5, #31def9);
+  color: rgba(0, 0, 0, 0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: relative;
 }
 
 .orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#efd81d] via-[#fc8c04] to-[#efd81d] bg-clip-text text-transparent;
 }
 
 .green_gradient {
@@ -98,15 +140,15 @@
 }
 
 .blue_gradient {
-  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#1defef] via-[#0467fc] to-[#1defef] bg-clip-text text-transparent;
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+  @apply mt-8 text-lg text-white sm:text-xl max-w-2xl;
 }
 
 .search_input {
-  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-2/4 rounded-xl border border-[#fff] bg-[#fff] py-2 font-satoshi pl-4 pr-4 text-lg shadow-lg font-normal focus:border-[#fff] focus:outline-double focus:ring-4 text-black tracking-wider;
 }
 
 .copy_btn {
@@ -114,7 +156,7 @@
 }
 
 .glassmorphism {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  @apply rounded-xl border border-gray-200 bg-white shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
 }
 
 .prompt_layout {
@@ -137,15 +179,47 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
+  @apply max-md:hidden font-semibold text-2xl text-white  tracking-wide pt-3;
+  font-family: "Poppins";
 }
 
 .dropdown {
-  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute right-0 sm:top-24 top-full mt-3 sm:mr-16 mr-0 p-5 rounded-lg bg-white sm:min-w-[210px] min-w-[250px] flex flex-col gap-2 justify-end items-end;
 }
 
 .dropdown_link {
-  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
+  @apply text-lg text-gray-800 hover:text-gray-700 font-medium;
+  font-family: "Poppins";
+}
+
+.slide-down {
+  animation: slideDown 0.3s ease-in-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-in-out reverse forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(30%);
+    opacity: 0;
+  }
 }
 
 /* PromptCard Component */
@@ -168,3 +242,7 @@
 .flex-between {
   @apply flex justify-between items-center;
 }
+
+.google_btn{
+  @apply flex gap-5 text-black hover:bg-[#e5e7eb] font-semibold px-6 py-3 rounded-lg text-xl bg-[#fff] transition-all delay-75 ease-out
+} 
